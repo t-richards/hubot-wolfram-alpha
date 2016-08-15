@@ -1,0 +1,19 @@
+{
+  "name": "hubot-wolfram-alpha",
+  "description": "Wolfram Alpha plugin for Hubot",
+  "version": "0.0.1",
+  "author": "Tom Richards <tom@tomrichards.net>",
+  "license": "MIT",
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
+  "dependencies": {
+    "coffee-script": "^1.10.0",
+    "xml2js": "^0.4.16"
+  },
+  "peerDependencies": {
+    "hubot": "2.x"
+  },
+  "main": "index.coffee"
+}
