@@ -43,7 +43,8 @@ format_tips = (result) ->
 fetch_wolfram_results = (robot, res) ->
   # Rich slack-formatted response object
   response =
-    attachments: []
+    attachments: [],
+    username: robot.name
 
   # HTTP query options
   options =
