@@ -29,5 +29,10 @@ hubot wolfram <query> - Displays Wolfram Alpha results for <query>
 hubot wfa <query> - Displays Wolfram Alpha results for <query>
 ```
 
-[wfa]: http://www.wolframalpha.com/
+# License
+
+[MIT][license]
+
 [hubot]: https://hubot.github.com/
+[license]: LICENSE
+[wfa]: http://www.wolframalpha.com/
