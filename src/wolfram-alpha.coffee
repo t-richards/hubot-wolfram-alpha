@@ -33,6 +33,13 @@ format_attachments = (result) ->
 
   attachments
 
+format_tips = (result) ->
+  tip_count = parseInt(result.queryresult.tips[0].$.count, 10)
+  if isNaN(tip_count) || tip_count < 1
+    return ''
+
+  "\nTips:\n" + (" - #{item.tip[0].$.text}" for item in result.queryresult.tips)
+
 fetch_wolfram_results = (robot, res) ->
   # Rich slack-formatted response object
   response =
@@ -45,8 +52,15 @@ fetch_wolfram_results = (robot, res) ->
       appid: process.env.WOLFRAM_ALPHA_APPID
   robot.http('https://api.wolframalpha.com/v2/query', options)
     .get() (err, _res, body) ->
-      parser = new (xml2js.Parser)
+      parser = new xml2js.Parser
       parser.parseString body, (err, result) ->
+        # No results?
+        if result.queryresult.$.success == 'false'
+          resp = 'No results!'
+          resp += format_tips(result)
+          return res.send(resp)
+
+        # Send all results
         response.attachments = format_attachments(result)
         res.send response
 
