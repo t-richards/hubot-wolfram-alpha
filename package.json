@@ -1,9 +1,12 @@
 {
   "name": "hubot-wolfram-alpha",
   "description": "Wolfram Alpha plugin for Hubot",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Tom Richards <tom@tomrichards.net>",
-  "homepage": "https://github.com/t-richards/hubot-wolfram-alpha",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/t-richards/hubot-wolfram-alpha.git"
+  },
   "license": "MIT",
   "keywords": [
     "hubot",
