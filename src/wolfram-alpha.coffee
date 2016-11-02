@@ -7,6 +7,8 @@
 #
 # Configuration:
 #   WOLFRAM_ALPHA_APPID - The API key for your Wolfram Alpha application
+#   CAMO_KEY - (Optional) The shared secret key for a Camo proxy
+#   CAMO_HOST - (Optional) The hostname for a Camo proxy
 #
 # Author:
 #   Tom Richards <tom@tomrichards.net>
@@ -16,6 +18,16 @@
 xml2js = require('xml2js')
 
 # helpers
+format_image = (url) ->
+  return url unless process.env.CAMO_KEY
+
+  camoUrl = require('camo-url')({
+    host: process.env.CAMO_HOST,
+    key: process.env.CAMO_KEY,
+    type: 'path'
+  })
+  camoUrl(url)
+
 format_attachments = (result) ->
   attachments = []
 
@@ -27,13 +39,14 @@ format_attachments = (result) ->
       if index > 1
         delete attachment.title
       attachment.fallback = subpod.plaintext[0]
-      attachment.image_url = subpod.img[0].$.src
+      attachment.image_url = format_image(subpod.img[0].$.src)
 
     attachments.push(attachment)
 
   attachments
 
 format_tips = (result) ->
+  return '' unless result.queryresult?.tips?
   tip_count = parseInt(result.queryresult.tips[0].$.count, 10)
   if isNaN(tip_count) || tip_count < 1
     return ''
