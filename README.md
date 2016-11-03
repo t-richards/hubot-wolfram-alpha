@@ -1,6 +1,10 @@
 # hubot-wolfram-alpha
 
-[Wolfram Alpha][wfa] integration for [Hubot][hubot]. Emits slack-formatted attachments.
+[Wolfram Alpha][wfa] integration for [Hubot][hubot]. Emits [Slack][slack]-formatted attachments.
+
+# Example
+
+![example](https://cloud.githubusercontent.com/assets/3905798/19981854/05e93e78-a1da-11e6-8048-07e704b2f16b.png)
 
 # Installation
 
@@ -37,4 +41,5 @@ hubot wfa <query> - Displays Wolfram Alpha results for <query>
 
 [hubot]: https://hubot.github.com/
 [license]: LICENSE
+[slack]: https://slack.com/
 [wfa]: http://www.wolframalpha.com/
