@@ -4,7 +4,7 @@
 
 # Example
 
-![example](https://cloud.githubusercontent.com/assets/3905798/19981854/05e93e78-a1da-11e6-8048-07e704b2f16b.png)
+![example](https://cloud.githubusercontent.com/assets/3905798/19982108/18195ff0-a1db-11e6-966a-ebea0dfd8770.png)
 
 # Installation
 
