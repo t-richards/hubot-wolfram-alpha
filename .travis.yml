@@ -1,0 +1,11 @@
+language: node_js
+sudo: false
+notifications:
+  email: false
+node_js:
+  - "8" # Current
+  - "6" # LTS "Boron"
+  - "4" # LTS "Argon"
+cache:
+  directories:
+    - node_modules

@@ -1,0 +1,18 @@
+{"queryresult" : {
+	"success" : false,
+	"error" : false,
+	"numpods" : 0,
+	"datatypes" : "",
+	"timedout" : "",
+	"timedoutpods" : "",
+	"timing" : 0.339,
+	"parsetiming" : 0.082,
+	"parsetimedout" : false,
+	"recalculate" : "",
+	"id" : "",
+	"host" : "http:\/\/www5b.wolframalpha.com",
+	"server" : "41",
+	"related" : "",
+	"version" : "2.6",
+	"tips" : {"text" : "Check your spelling, and use English"}
+}}

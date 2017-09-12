@@ -1,0 +1,332 @@
+{"queryresult" : {
+	"success" : true,
+	"error" : false,
+	"numpods" : 7,
+	"datatypes" : "Character,Chemical,Planet",
+	"timedout" : "",
+	"timedoutpods" : "",
+	"timing" : 3.3770000000000002,
+	"parsetiming" : 0.189,
+	"parsetimedout" : false,
+	"recalculate" : "",
+	"id" : "MSPa10661he70c78c3186ic20000698d3a038d2880f4",
+	"host" : "https:\/\/www5b.wolframalpha.com",
+	"server" : "14",
+	"related" : "https:\/\/www5b.wolframalpha.com\/api\/v2\/relatedQueries.jsp?id=MSPa10671he70c78c3186ic200004e15gdfb8cggbg3g6283415642470667628",
+	"version" : "2.6",
+	"pods" : [
+		{
+			"title" : "Input interpretation",
+			"scanner" : "Identity",
+			"id" : "Input",
+			"position" : 100,
+			"error" : false,
+			"numsubpods" : 1,
+			"subpods" : [
+				{
+					"title" : "",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10681he70c78c3186ic200001e1ai4eh5275h226?MSPStoreType=image\/gif&s=14",
+						"alt" : "Earth  (planet)",
+						"title" : "Earth  (planet)",
+						"width" : 97,
+						"height" : 18
+					},
+					"plaintext" : "Earth  (planet)"
+				}
+			]
+		},
+		{
+			"title" : "Orbital properties",
+			"scanner" : "Data",
+			"id" : "BasicPlanetOrbitalPropertiesEntityTriggered:PlanetData",
+			"position" : 200,
+			"error" : false,
+			"numsubpods" : 1,
+			"primary" : true,
+			"subpods" : [
+				{
+					"title" : "",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10691he70c78c3186ic2000041h6ee59h94a1750?MSPStoreType=image\/gif&s=14",
+						"alt" : "current distance from Sun | 1.006 au\n8.369 light minutes\nlargest distance from orbit center | 94.50913 million mi\n1.01671033 au\nnearest distance from orbit center | 91.402505 million mi\n0.98328989 au\norbital period | 365.25636 days",
+						"title" : "current distance from Sun | 1.006 au\n8.369 light minutes\nlargest distance from orbit center | 94.50913 million mi\n1.01671033 au\nnearest distance from orbit center | 91.402505 million mi\n0.98328989 au\norbital period | 365.25636 days",
+						"width" : 397,
+						"height" : 192
+					},
+					"plaintext" : "current distance from Sun | 1.006 au\n8.369 light minutes\nlargest distance from orbit center | 94.50913 million mi\n1.01671033 au\nnearest distance from orbit center | 91.402505 million mi\n0.98328989 au\norbital period | 365.25636 days"
+				}
+			],
+			"states" : [
+				{
+					"name" : "Show metric",
+					"input" : "BasicPlanetOrbitalPropertiesEntityTriggered:PlanetData__Show metric"
+				},
+				{
+					"name" : "More",
+					"input" : "BasicPlanetOrbitalPropertiesEntityTriggered:PlanetData__More"
+				}
+			],
+			"infos" : {
+				"units" : [
+[
+						{
+							"short" : "au",
+							"long" : "astronomical units"
+						},
+						{
+							"short" : "mi",
+							"long" : "miles"
+						}
+					],
+					{
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10701he70c78c3186ic2000017i9158hg1a15be4?MSPStoreType=image\/gif&s=14",
+						"width" : "162",
+						"height" : "47"
+					}
+				]
+			}
+		},
+		{
+			"title" : "Physical properties",
+			"scanner" : "Data",
+			"id" : "BasicPlanetPhysicalProperties:PlanetData",
+			"position" : 300,
+			"error" : false,
+			"numsubpods" : 1,
+			"subpods" : [
+				{
+					"title" : "",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10711he70c78c3186ic2000047h9b99dfi9bdh42?MSPStoreType=image\/gif&s=14",
+						"alt" : "equatorial radius | 3963.2 mi\nmass | 5.9721986×10^24 kg\nrotation period | 23.934472 h  (sidereal)\nnumber of moons | 1\nage | 4.54 billion yr",
+						"title" : "equatorial radius | 3963.2 mi\nmass | 5.9721986×10^24 kg\nrotation period | 23.934472 h  (sidereal)\nnumber of moons | 1\nage | 4.54 billion yr",
+						"width" : 303,
+						"height" : 164
+					},
+					"plaintext" : "equatorial radius | 3963.2 mi\nmass | 5.9721986×10^24 kg\nrotation period | 23.934472 h  (sidereal)\nnumber of moons | 1\nage | 4.54 billion yr"
+				}
+			],
+			"states" : [
+				{
+					"name" : "Show metric",
+					"input" : "BasicPlanetPhysicalProperties:PlanetData__Show metric"
+				},
+				{
+					"name" : "More",
+					"input" : "BasicPlanetPhysicalProperties:PlanetData__More"
+				}
+			],
+			"infos" : {
+				"units" : [
+[
+						{
+							"short" : "h",
+							"long" : "hours"
+						},
+						{
+							"short" : "kg",
+							"long" : "kilograms"
+						},
+						{
+							"short" : "mi",
+							"long" : "miles"
+						},
+						{
+							"short" : "yr",
+							"long" : "years"
+						}
+					],
+					{
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10721he70c78c3186ic200003c14hhe0c61b20bg?MSPStoreType=image\/gif&s=14",
+						"width" : "113",
+						"height" : "89"
+					}
+				]
+			}
+		},
+		{
+			"title" : "Symbol",
+			"scanner" : "Data",
+			"id" : "PlanetGlyph:PlanetData",
+			"position" : 400,
+			"error" : false,
+			"numsubpods" : 1,
+			"subpods" : [
+				{
+					"title" : "",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10731he70c78c3186ic2000067e89f9iebd80hc3?MSPStoreType=image\/gif&s=14",
+						"alt" : "(+)",
+						"title" : "(+)",
+						"width" : 11,
+						"height" : 19
+					},
+					"plaintext" : "(+)"
+				}
+			]
+		},
+		{
+			"title" : "Atmosphere",
+			"scanner" : "Data",
+			"id" : "PlanetAtmospheres:PlanetData",
+			"position" : 500,
+			"error" : false,
+			"numsubpods" : 3,
+			"subpods" : [
+				{
+					"title" : "",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10741he70c78c3186ic200001adf699b2d8h9ca5?MSPStoreType=image\/gif&s=14",
+						"alt" : "atmospheric pressure | 1.01325 bars  (at surface)\nminimum temperature | -128 °F  (at surface)\naverage temperature | 57.2 °F  (at surface)\nmaximum temperature | 136 °F  (at surface)",
+						"title" : "atmospheric pressure | 1.01325 bars  (at surface)\nminimum temperature | -128 °F  (at surface)\naverage temperature | 57.2 °F  (at surface)\nmaximum temperature | 136 °F  (at surface)",
+						"width" : 355,
+						"height" : 132
+					},
+					"plaintext" : "atmospheric pressure | 1.01325 bars  (at surface)\nminimum temperature | -128 °F  (at surface)\naverage temperature | 57.2 °F  (at surface)\nmaximum temperature | 136 °F  (at surface)"
+				},
+				{
+					"title" : "Major constituents",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10751he70c78c3186ic200001g811171f7hdd3f7?MSPStoreType=image\/gif&s=14",
+						"alt" : "nitrogen  (N_2) | 78.084%\noxygen  (O_2) | 20.948%\nwater  (H_2O) | 1%",
+						"title" : "nitrogen  (N_2) | 78.084%\noxygen  (O_2) | 20.948%\nwater  (H_2O) | 1%",
+						"width" : 196,
+						"height" : 91
+					},
+					"plaintext" : "nitrogen  (N_2) | 78.084%\noxygen  (O_2) | 20.948%\nwater  (H_2O) | 1%"
+				},
+				{
+					"title" : "",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10761he70c78c3186ic200002397ffgd475eda69?MSPStoreType=image\/gif&s=14",
+						"alt" : "(components may not add up to 100% due to uncertainty, variability, and round-off)",
+						"title" : "(components may not add up to 100% due to uncertainty, variability, and round-off)",
+						"width" : 463,
+						"height" : 18
+					},
+					"plaintext" : "(components may not add up to 100% due to uncertainty, variability, and round-off)"
+				}
+			],
+			"states" : [
+				{
+					"name" : "Use Celsius",
+					"input" : "PlanetAtmospheres:PlanetData__Use Celsius"
+				},
+				{
+					"name" : "Show minor constituents",
+					"input" : "PlanetAtmospheres:PlanetData__Show minor constituents"
+				},
+				{
+					"name" : "Show pie chart",
+					"input" : "PlanetAtmospheres:PlanetData__Show pie chart"
+				}
+			]
+		},
+		{
+			"title" : "Current solar system configuration",
+			"scanner" : "Data",
+			"id" : "SolarSystemConfiguration:PlanetData",
+			"position" : 600,
+			"error" : false,
+			"numsubpods" : 1,
+			"subpods" : [
+				{
+					"title" : "",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10771he70c78c3186ic2000062ded4dg39bha4ag?MSPStoreType=image\/gif&s=14",
+						"alt" : "",
+						"title" : "",
+						"width" : 550,
+						"height" : 415
+					},
+					"plaintext" : ""
+				}
+			],
+			"states" : [
+				{
+					"name" : "Zoom in",
+					"input" : "SolarSystemConfiguration:PlanetData__Zoom in"
+				},
+				{
+					"name" : "Zoom out",
+					"input" : "SolarSystemConfiguration:PlanetData__Zoom out"
+				}
+			]
+		},
+		{
+			"title" : "Image",
+			"scanner" : "Data",
+			"id" : "Image:PlanetData",
+			"position" : 700,
+			"error" : false,
+			"numsubpods" : 1,
+			"subpods" : [
+				{
+					"title" : "",
+					"imagesource" : "http:\/\/www.nasa.gov\/multimedia\/imagegallery\/image_feature_329.html",
+					"img" : {
+						"src" : "https:\/\/www5b.wolframalpha.com\/Calculate\/MSP\/MSP10781he70c78c3186ic200004gfaf8c0hef1426i?MSPStoreType=image\/gif&s=14",
+						"alt" : "",
+						"title" : "",
+						"width" : 150,
+						"height" : 150
+					},
+					"plaintext" : ""
+				}
+			]
+		}
+	],
+	"assumptions" : {
+		"type" : "Clash",
+		"word" : "earth",
+		"template" : "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead",
+		"count" : 6,
+		"values" : [
+			{
+				"name" : "Planet",
+				"desc" : "a planet",
+				"input" : "*C.earth-_*Planet-"
+			},
+			{
+				"name" : "CommonMaterial",
+				"desc" : "a general material",
+				"input" : "*C.earth-_*CommonMaterial-"
+			},
+			{
+				"name" : "GeographicRegion",
+				"desc" : "a geographic region",
+				"input" : "*C.earth-_*GeographicRegion-"
+			},
+			{
+				"name" : "Word",
+				"desc" : "a word",
+				"input" : "*C.earth-_*Word-"
+			},
+			{
+				"name" : "Movie",
+				"desc" : "a movie",
+				"input" : "*C.earth-_*Movie-"
+			},
+			{
+				"name" : "Country",
+				"desc" : "all countries",
+				"input" : "*C.earth-_*Country-"
+			}
+		]
+	},
+	"sources" : [
+		{
+			"url" : "https:\/\/www.wolframalpha.com\/sources\/ChemicalDataSourceInformationNotes.html",
+			"text" : "Chemical data"
+		},
+		{
+			"url" : "https:\/\/www.wolframalpha.com\/sources\/PlanetDataSourceInformationNotes.html",
+			"text" : "Planet data"
+		},
+		{
+			"url" : "https:\/\/www.wolframalpha.com\/sources\/StarDataSourceInformationNotes.html",
+			"text" : "Star data"
+		}
+	]
+}}
