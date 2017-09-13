@@ -7,7 +7,6 @@ const expect = chai.expect
 const readFixture = require('./helper/readFixture')
 
 const parseResult = require('../src/parse-result')
-const generateAttachments = require('../src/generate-attachments')
 
 describe('determining query success', () => {
   it('handles unsuccessful queries', () => {

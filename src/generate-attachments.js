@@ -18,13 +18,11 @@ module.exports = (result) => {
   let attachments = []
 
   for (let pod of result.pods) {
-    console.log(pod)
     let attachment = {
       color: '#FF8700',
       title: pod.title
     }
     for (let subpod of pod.subpods) {
-      console.log(subpod)
       attachment.fallback = subpod.plaintext
       attachment.image_url = formatImage(
         subpod.img.src,

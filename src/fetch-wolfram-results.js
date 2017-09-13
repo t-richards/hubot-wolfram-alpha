@@ -32,9 +32,9 @@ module.exports = (robot, res) => {
         return
       }
 
-      data = parseResult(result)
+      let data = parseResult(result)
       if (data === null) {
-        res.send("Response data was not valid.")
+        res.send('Response data was not valid.')
         return
       }
 
