@@ -1,3 +1,5 @@
+'use strict'
+
 const formatTips = require('./format-tips')
 const generateAttachments = require('./generate-attachments')
 const parseResult = require('./parse-result')

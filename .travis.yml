@@ -5,7 +5,6 @@ notifications:
 node_js:
   - "8" # Current
   - "6" # LTS "Boron"
-  - "4" # LTS "Argon"
 install:
   - yarn install
 script:

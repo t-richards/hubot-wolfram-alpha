@@ -1,5 +1,7 @@
 # hubot-wolfram-alpha
 
+[![Build Status](https://travis-ci.org/t-richards/hubot-wolfram-alpha.svg?branch=master)](https://travis-ci.org/t-richards/hubot-wolfram-alpha)
+
 [Wolfram Alpha][wfa] integration for [Hubot][hubot]. Emits [Slack][slack]-formatted attachments.
 
 # Example

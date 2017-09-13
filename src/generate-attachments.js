@@ -1,3 +1,5 @@
+'use strict'
+
 // helpers
 const camoUrl = require('camo-url')
 const formatImage = (url, camoHost = null, camoKey = null) => {

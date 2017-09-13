@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = function (data) {
   if (!data.hasOwnProperty('tips')) {
     return ''

@@ -19,7 +19,7 @@ describe('require("wolfram-alpha")', () => {
   })
 })
 
-describe('wolfram-alpha', () => {
+describe('wolfram-alpha hubot script', () => {
   let robot, user
 
   beforeEach(() => {
