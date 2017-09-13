@@ -5,11 +5,5 @@ module.exports = function (data) {
     return ''
   }
 
-  let formattedTips = 'No results!\nTips:\n'
-
-  for (let tip of data.tips) {
-    formattedTips += ` - ${tip.text}\n`
-  }
-
-  return formattedTips
+  return `No results!\nTips:\n  - ${data.tips.text}\n`
 }
