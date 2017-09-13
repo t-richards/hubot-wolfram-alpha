@@ -16,11 +16,9 @@
   "dependencies": {
     "camo-url": "^0.1.5"
   },
-  "peerDependencies": {
-    "hubot": "2.x"
-  },
   "devDependencies": {
     "chai": "^4.1.2",
+    "hubot": "^3.0.1",
     "hubot-mock-adapter-v3": "^1.0.1",
     "mocha": "^3.5.3",
     "sinon": "^3.2.1",
@@ -30,5 +28,11 @@
   "scripts": {
     "lint": "standard",
     "test": "NODE_ENV=test mocha"
+  },
+  "standard": {
+    "globals": [
+      "beforeEach",
+      "afterEach"
+    ]
   }
 }

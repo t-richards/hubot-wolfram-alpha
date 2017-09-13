@@ -6,6 +6,11 @@ node_js:
   - "8" # Current
   - "6" # LTS "Boron"
   - "4" # LTS "Argon"
+install:
+  - yarn install
+script:
+  - yarn run lint
+  - yarn run test
 cache:
   directories:
     - node_modules
