@@ -1,6 +1,5 @@
 'use strict'
 
-const formatTips = require('./format-tips')
 const generateAttachments = require('./generate-attachments')
 const parseResult = require('./parse-result')
 
@@ -28,21 +27,25 @@ module.exports = (robot, res) => {
 
   return robot
     .http('https://api.wolframalpha.com/v2/query', options)
-    .get()(function (err, result, body) {
+    .get()(function (err, _response, body) {
       if (err) {
         res.send(`An error occurred: ${err}`)
         return
       }
 
-      let data = parseResult(result)
+      let data = parseResult(body)
       if (data === null) {
         res.send('Response data was not valid.')
         return
       }
 
-      if (data.success === false) {
-        let tips = formatTips(data)
-        res.send(tips)
+      if (data.hasOwnProperty('error')) {
+        res.send(`Error code ${data.error.code}: ${data.error.msg}`)
+        return
+      }
+
+      if (data.hasOwnProperty('tips')) {
+        res.send(`No results!\nTips:\n  - ${data.tips.text}\n`)
         return
       }
 
