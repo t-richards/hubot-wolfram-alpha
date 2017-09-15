@@ -39,7 +39,7 @@ module.exports = (robot, res) => {
         return
       }
 
-      if (data.hasOwnProperty('error')) {
+      if (data.hasOwnProperty('error') && data.error !== false) {
         res.send(`Error code ${data.error.code}: ${data.error.msg}`)
         return
       }
