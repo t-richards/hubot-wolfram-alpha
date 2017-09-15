@@ -29,7 +29,7 @@ module.exports = (robot, res) => {
     .http('https://api.wolframalpha.com/v2/query', options)
     .get()(function (err, _response, body) {
       if (err) {
-        res.send(`An error occurred: ${err}`)
+        res.send(err)
         return
       }
 
