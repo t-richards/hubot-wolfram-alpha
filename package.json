@@ -14,7 +14,8 @@
     "hubot-scripts"
   ],
   "dependencies": {
-    "camo-url": "^0.1.5"
+    "camo-url": "^0.1.5",
+    "snyk": "^1.85.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -27,12 +28,15 @@
   },
   "scripts": {
     "lint": "standard",
-    "test": "NODE_ENV=test mocha"
+    "test": "NODE_ENV=test mocha",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "standard": {
     "globals": [
       "beforeEach",
       "afterEach"
     ]
-  }
+  },
+  "snyk": true
 }
