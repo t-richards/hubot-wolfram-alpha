@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 // Description:
 //   Allows hubot to display Wolfram Alpha results.
@@ -16,9 +16,11 @@
 //   Tom Richards <tom@tomrichards.net>
 //
 
-const fetchWolframResults = require('./fetch-wolfram-results')
+const fetchWolframResults = require("./fetch-wolfram-results");
 
 // module
-module.exports = (robot) => {
-  return robot.respond(/(wolfram|wfa) (.*)/i, res => fetchWolframResults(robot, res))
-}
+module.exports = robot => {
+  return robot.respond(/(wolfram|wfa) (.*)/i, res =>
+    fetchWolframResults(robot, res)
+  );
+};

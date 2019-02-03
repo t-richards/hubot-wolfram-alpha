@@ -1,40 +1,21 @@
-'use strict'
-
-// helpers
-const camoUrl = require('camo-url')
-const formatImage = (url, camoHost = null, camoKey = null) => {
-  if (camoHost === null && camoKey === null) {
-    return url
-  }
-
-  let opts = {
-    host: camoHost,
-    key: camoKey,
-    type: 'path'
-  }
-  return camoUrl(opts)(url)
-}
+"use strict";
 
 // exports
-module.exports = (result) => {
-  let attachments = []
+module.exports = result => {
+  let attachments = [];
 
   for (let pod of result.pods) {
     let attachment = {
-      color: '#FF8700',
+      color: "#FF8700",
       title: pod.title
-    }
+    };
     for (let subpod of pod.subpods) {
-      attachment.fallback = subpod.plaintext
-      attachment.image_url = formatImage(
-        subpod.img.src,
-        process.env.CAMO_HOST,
-        process.env.CAMO_KEY
-      )
+      attachment.fallback = subpod.plaintext;
+      attachment.image_url = subpod.img.src;
     }
 
-    attachments.push(attachment)
+    attachments.push(attachment);
   }
 
-  return attachments
-}
+  return attachments;
+};

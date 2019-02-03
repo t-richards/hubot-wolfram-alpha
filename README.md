@@ -1,6 +1,8 @@
 # hubot-wolfram-alpha
 
-[![Build Status](https://travis-ci.org/t-richards/hubot-wolfram-alpha.svg?branch=master)](https://travis-ci.org/t-richards/hubot-wolfram-alpha)
+[![CircleCI Build Status](https://img.shields.io/circleci/project/github/t-richards/hubot-wolfram-alpha/master.svg?style=flat-square)](https://circleci.com/gh/t-richards/hubot-wolfram-alpha)
+
+[![NPM Version](https://img.shields.io/npm/v/hubot-wolfram-alpha.svg?style=flat-square)](https://www.npmjs.com/package/hubot-wolfram-alpha)
 
 [Wolfram Alpha][wfa] integration for [Hubot][hubot]. Emits [Slack][slack]-formatted attachments.
 
@@ -26,8 +28,6 @@ Then add **hubot-wolfram-alpha** to your `external-scripts.json`.
 
 ```
 WOLFRAM_ALPHA_APPID - The API key for your Wolfram Alpha application
-CAMO_KEY - (Optional) The shared secret key for a Camo proxy
-CAMO_HOST - (Optional) The hostname for a Camo proxy
 ```
 
 # Commands
