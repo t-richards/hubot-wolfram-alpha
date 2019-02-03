@@ -1,9 +1,9 @@
-'use strict'
+"use strict";
 
-module.exports = (rawData) => {
+module.exports = rawData => {
   try {
-    return JSON.parse(rawData).queryresult
+    return JSON.parse(rawData).queryresult;
   } catch (e) {
-    return null
+    return null;
   }
-}
+};

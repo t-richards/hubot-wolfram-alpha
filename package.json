@@ -13,20 +13,17 @@
     "hubot",
     "hubot-scripts"
   ],
-  "dependencies": {
-    "camo-url": "^0.2.0"
-  },
   "devDependencies": {
     "chai": "^4.1.2",
     "hubot": "^3.0.1",
     "hubot-mock-adapter-v3": "^1.0.1",
     "mocha": "^5.2.0",
+    "prettier": "1.16.3",
     "sinon": "^4.5.0",
-    "sinon-chai": "^2.13.0",
-    "standard": "^12.0.1"
+    "sinon-chai": "^2.13.0"
   },
   "scripts": {
-    "lint": "standard",
+    "lint": "prettier --write **/*.js",
     "test": "NODE_ENV=test mocha"
   },
   "standard": {
