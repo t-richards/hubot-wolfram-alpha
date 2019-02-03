@@ -14,7 +14,7 @@
     "hubot-scripts"
   ],
   "dependencies": {
-    "camo-url": "^0.1.5"
+    "camo-url": "^0.2.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
