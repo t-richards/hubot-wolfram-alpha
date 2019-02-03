@@ -20,6 +20,13 @@ jobs:
       - run:
           name: Lint code
           command: yarn lint
+      - run:
+          name: Build package
+          command: yarn pack
+      - run:
+          name: Inspect package contents
+          command: |
+            tar xvf *.tgz
       - store_artifacts:
           path: coverage
           prefix: coverage

@@ -1,0 +1,9 @@
+.circleci
+.gitignore
+.npmignore
+.nyc_output
+coverage
+node_modules
+test
+yarn.lock
+*.tgz

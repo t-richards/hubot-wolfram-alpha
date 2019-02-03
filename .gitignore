@@ -1,4 +1,5 @@
 .nyc_output/
+*.tgz
 coverage/
 node_modules/
 yarn.lock
