@@ -28,8 +28,6 @@ Then add **hubot-wolfram-alpha** to your `external-scripts.json`.
 
 ```
 WOLFRAM_ALPHA_APPID - The API key for your Wolfram Alpha application
-CAMO_KEY - (Optional) The shared secret key for a Camo proxy
-CAMO_HOST - (Optional) The hostname for a Camo proxy
 ```
 
 # Commands
