@@ -20,3 +20,6 @@ jobs:
       - run:
           name: Lint code
           command: yarn lint
+      - store_artifacts:
+          path: coverage
+          prefix: coverage

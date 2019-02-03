@@ -18,18 +18,20 @@
     "hubot": "^3.0.1",
     "hubot-mock-adapter-v3": "^1.0.1",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "prettier": "1.16.3",
     "sinon": "^7.2.3",
     "sinon-chai": "^3.3.0"
   },
   "scripts": {
     "lint": "prettier --write **/*.js",
-    "test": "NODE_ENV=test mocha"
+    "test": "NODE_ENV=test nyc mocha"
   },
-  "standard": {
-    "globals": [
-      "beforeEach",
-      "afterEach"
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
     ]
   }
 }
