@@ -25,6 +25,7 @@
   },
   "scripts": {
     "lint": "prettier --write **/*.js",
+    "lint-ci": "prettier --check **/*.js",
     "test": "NODE_ENV=test nyc mocha"
   },
   "nyc": {
