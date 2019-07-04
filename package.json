@@ -26,7 +26,9 @@
   "scripts": {
     "lint": "prettier --write **/*.js",
     "lint-ci": "prettier --check **/*.js",
-    "test": "NODE_ENV=test nyc mocha"
+    "test": "NODE_ENV=test nyc mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "nyc": {
     "reporter": [
@@ -34,5 +36,9 @@
       "text",
       "html"
     ]
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.189.0"
   }
 }
