@@ -2,11 +2,14 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - restore_cache:
           key: deps-v1-{{ checksum "package.json" }}
+      - run:
+          name: Show yarn version
+          command: yarn version
       - run:
           name: Install dependencies
           command: yarn install
@@ -27,6 +30,9 @@ jobs:
           name: Inspect package contents
           command: |
             tar xvf *.tgz
+      - run:
+          name: Audit dependencies
+          command: yarn audit
       - store_artifacts:
           path: coverage
           prefix: coverage
