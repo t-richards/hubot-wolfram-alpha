@@ -1,13 +1,12 @@
 "use strict";
 
-/* global describe, beforeEach, afterEach, it */
-
 const path = require("path");
 
+const { describe, it, beforeEach, afterEach } = require("mocha");
 const chai = require("chai");
+const { expect } = chai;
 const Hubot = require("hubot");
 
-const expect = chai.expect;
 const Robot = Hubot.Robot;
 const TextMessage = Hubot.TextMessage;
 
