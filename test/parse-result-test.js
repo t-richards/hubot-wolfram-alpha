@@ -1,9 +1,7 @@
 "use strict";
 
-/* global describe, beforeEach, afterEach, it */
-
-const chai = require("chai");
-const expect = chai.expect;
+const { describe, it } = require("mocha");
+const { expect } = require("chai");
 const readFixture = require("./helper/readFixture");
 
 const parseResult = require("../src/parse-result");
