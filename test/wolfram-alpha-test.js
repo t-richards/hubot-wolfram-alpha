@@ -22,7 +22,7 @@ describe("wolfram-alpha hubot script", () => {
   let robot, user;
 
   beforeEach(() => {
-    robot = new Robot(null, "mock-adapter-v3", false, "hubot");
+    robot = new Robot(null, "mock-adapter", false, "hubot");
     robot.loadFile(path.resolve("src/"), "wolfram-alpha.js");
     robot.adapter.on("connected", () => {
       robot.brain.userForId("1", {
