@@ -7,7 +7,7 @@ module.exports = (robot, res) => {
   // Rich slack-formatted response object
   let response = {
     attachments: [],
-    username: robot.name
+    username: robot.name,
   };
 
   // HTTP query options
@@ -16,8 +16,8 @@ module.exports = (robot, res) => {
       format: "image,plaintext",
       output: "JSON",
       input: res.match[2],
-      appid: process.env.WOLFRAM_ALPHA_APPID
-    }
+      appid: process.env.WOLFRAM_ALPHA_APPID,
+    },
   };
 
   if (process.env.NODE_ENV === "test") {
@@ -26,7 +26,7 @@ module.exports = (robot, res) => {
   }
 
   return robot.http("https://api.wolframalpha.com/v2/query", options).get()(
-    function(err, _response, body) {
+    function (err, _response, body) {
       if (err) {
         res.send(err);
         return;

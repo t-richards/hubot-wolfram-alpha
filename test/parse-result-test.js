@@ -11,9 +11,7 @@ describe("determining query success", () => {
     let fixture = readFixture("slkdjfsd");
     let data = parseResult(fixture);
 
-    expect(data)
-      .to.have.property("success")
-      .that.is.a("boolean");
+    expect(data).to.have.property("success").that.is.a("boolean");
     expect(data.success).to.eql(false);
   });
 
@@ -21,9 +19,7 @@ describe("determining query success", () => {
     let fixture = readFixture("earth");
     let data = parseResult(fixture);
 
-    expect(data)
-      .to.have.property("success")
-      .that.is.a("boolean");
+    expect(data).to.have.property("success").that.is.a("boolean");
     expect(data.success).to.eql(true);
   });
 });

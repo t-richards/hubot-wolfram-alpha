@@ -8,7 +8,7 @@ const formatTitle = (pod_title, subpod_title) => {
   return pod_title;
 };
 
-module.exports = result => {
+module.exports = (result) => {
   let attachments = [];
 
   for (let pod of result.pods) {
@@ -17,7 +17,7 @@ module.exports = result => {
         color: "#FF8700",
         title: formatTitle(pod.title, subpod.title),
         fallback: subpod.plaintext,
-        image_url: subpod.img.src
+        image_url: subpod.img.src,
       });
     }
   }

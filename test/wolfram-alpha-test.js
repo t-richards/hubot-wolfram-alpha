@@ -28,7 +28,7 @@ describe("wolfram-alpha hubot script", () => {
       robot.brain.userForId("1", {
         name: "john",
         real_name: "John Doe",
-        room: "#test"
+        room: "#test",
       });
     });
     robot.run();
@@ -39,8 +39,8 @@ describe("wolfram-alpha hubot script", () => {
     robot.shutdown();
   });
 
-  it("responds to wolfram", done => {
-    robot.adapter.on("send", function(envelope, strings) {
+  it("responds to wolfram", (done) => {
+    robot.adapter.on("send", function (envelope, strings) {
       const answer = strings[0];
 
       expect(answer).to.eql("answering foo");
@@ -51,8 +51,8 @@ describe("wolfram-alpha hubot script", () => {
     robot.adapter.receive(new TextMessage(user, "hubot wolfram foo"));
   });
 
-  it("responds to wfa", done => {
-    robot.adapter.on("send", function(envelope, strings) {
+  it("responds to wfa", (done) => {
+    robot.adapter.on("send", function (envelope, strings) {
       const answer = strings[0];
 
       expect(answer).to.eql("answering bar");

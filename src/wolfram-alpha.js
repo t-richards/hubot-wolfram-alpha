@@ -19,8 +19,8 @@
 const fetchWolframResults = require("./fetch-wolfram-results");
 
 // module
-module.exports = robot => {
-  return robot.respond(/(wolfram|wfa) (.*)/i, res =>
+module.exports = (robot) => {
+  return robot.respond(/(wolfram|wfa) (.*)/i, (res) =>
     fetchWolframResults(robot, res)
   );
 };
