@@ -1,7 +1,5 @@
 "use strict";
 
-const { describe, it } = require("mocha");
-const { expect } = require("chai");
 const readFixture = require("./helper/readFixture");
 
 const parseResult = require("../src/parse-result");
@@ -37,7 +35,7 @@ describe("producing slack-formatted attachments", () => {
 
     let attachments = generateAttachments(data);
 
-    expect(attachments).to.deep.eql(expected);
+    expect(attachments).toEqual(expected);
   });
 
   it("generates attachments with multiple subpods", () => {
@@ -116,6 +114,6 @@ describe("producing slack-formatted attachments", () => {
 
     let attachments = generateAttachments(data);
 
-    expect(attachments).to.deep.eql(expected);
+    expect(attachments).toEqual(expected);
   });
 });

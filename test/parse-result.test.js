@@ -1,7 +1,5 @@
 "use strict";
 
-const { describe, it } = require("mocha");
-const { expect } = require("chai");
 const readFixture = require("./helper/readFixture");
 
 const parseResult = require("../src/parse-result");
@@ -12,8 +10,8 @@ describe("parseResult", () => {
 
     let result = parseResult(fixture);
 
-    expect(result).to.have.property("success").that.is.a("boolean");
-    expect(result.success).to.eql(false);
+    expect(result).toBeInstanceOf(Object);
+    expect(result.success).toBe(false);
   });
 
   it("handles successful queries", () => {
@@ -21,8 +19,8 @@ describe("parseResult", () => {
 
     let result = parseResult(fixture);
 
-    expect(result).to.have.property("success").that.is.a("boolean");
-    expect(result.success).to.eql(true);
+    expect(result).toBeInstanceOf(Object);
+    expect(result.success).toBe(true);
   });
 
   it("handles json parsing errors", () => {
@@ -30,6 +28,6 @@ describe("parseResult", () => {
 
     let result = parseResult(fixture);
 
-    expect(result).to.eql(null);
+    expect(result).toBe(null);
   });
 });

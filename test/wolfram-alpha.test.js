@@ -2,19 +2,14 @@
 
 const path = require("path");
 
-const { describe, it, beforeEach, afterEach } = require("mocha");
-const chai = require("chai");
-const { expect } = chai;
 const Hubot = require("hubot");
 
 const Robot = Hubot.Robot;
 const TextMessage = Hubot.TextMessage;
 
-chai.use(require("sinon-chai"));
-
 describe('require("wolfram-alpha")', () => {
   it("exports a function", () => {
-    expect(require("../index")).to.be.a("Function");
+    expect(require("../index")).toBeInstanceOf(Function);
   });
 });
 
@@ -39,25 +34,21 @@ describe("wolfram-alpha hubot script", () => {
     robot.shutdown();
   });
 
-  it("responds to wolfram", (done) => {
-    robot.adapter.on("send", function (envelope, strings) {
+  it("responds to wolfram", () => {
+    robot.adapter.on("send", function (_envelope, strings) {
       const answer = strings[0];
 
       expect(answer).to.eql("answering foo");
-
-      done();
     });
 
     robot.adapter.receive(new TextMessage(user, "hubot wolfram foo"));
   });
 
-  it("responds to wfa", (done) => {
+  it("responds to wfa", () => {
     robot.adapter.on("send", function (_envelope, strings) {
       const answer = strings[0];
 
       expect(answer).to.eql("answering bar");
-
-      done();
     });
 
     robot.adapter.receive(new TextMessage(user, "hubot wfa bar"));
