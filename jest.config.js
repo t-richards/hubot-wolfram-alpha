@@ -5,19 +5,14 @@ module.exports = {
   clearMocks: true,
   collectCoverage: true,
   coverageDirectory: "coverage",
-  coverageReporters: [
-    "json",
-    "text",
-    "lcov",
-    "html"
-  ],
+  coverageReporters: ["json", "text", "lcov", "html"],
   coverageThreshold: {
-    "global": {
-      "branches": 100,
-      "functions": 100,
-      "lines": 100,
-      "statements": 100
-    }
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
   },
   testEnvironment: "node",
 
