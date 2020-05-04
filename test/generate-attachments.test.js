@@ -1,7 +1,5 @@
 "use strict";
 
-const { describe, it } = require("mocha");
-const { expect } = require("chai");
 const readFixture = require("./helper/readFixture");
 
 const parseResult = require("../src/parse-result");
@@ -11,7 +9,6 @@ describe("producing slack-formatted attachments", () => {
   it("generates a list of attachments", () => {
     let fixture = readFixture("codices-replace-scrolls");
     let data = parseResult(fixture);
-    let attachments = generateAttachments(data);
     let expected = [
       {
         color: "#FF8700",
@@ -36,13 +33,14 @@ describe("producing slack-formatted attachments", () => {
       },
     ];
 
-    expect(attachments).to.deep.eql(expected);
+    let attachments = generateAttachments(data);
+
+    expect(attachments).toEqual(expected);
   });
 
   it("generates attachments with multiple subpods", () => {
     let fixture = readFixture("earth");
     let data = parseResult(fixture);
-    let attachments = generateAttachments(data);
     let expected = [
       {
         color: "#FF8700",
@@ -114,6 +112,8 @@ describe("producing slack-formatted attachments", () => {
       },
     ];
 
-    expect(attachments).to.deep.eql(expected);
+    let attachments = generateAttachments(data);
+
+    expect(attachments).toEqual(expected);
   });
 });

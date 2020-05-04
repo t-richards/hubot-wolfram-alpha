@@ -19,7 +19,7 @@ jobs:
             - ./node_modules
       - run:
           name: Lint code
-          command: yarn lint-ci
+          command: yarn lint:ci
       - run:
           name: Run tests
           command: yarn test
@@ -29,10 +29,9 @@ jobs:
       - run:
           name: Inspect package contents
           command: |
-            tar xvf *.tgz
-      - run:
-          name: Audit dependencies
-          command: yarn audit
+            tar tvf *.tgz
+      - store_test_results:
+          path: test-results
       - store_artifacts:
           path: coverage
           prefix: coverage
