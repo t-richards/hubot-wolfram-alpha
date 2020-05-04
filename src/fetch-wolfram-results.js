@@ -23,7 +23,7 @@ module.exports = (robot, res) => {
   return robot.http("https://api.wolframalpha.com/v2/query", options).get()(
     function (err, _response, body) {
       if (err) {
-        res.send(err);
+        res.send(err.toString());
         return;
       }
 

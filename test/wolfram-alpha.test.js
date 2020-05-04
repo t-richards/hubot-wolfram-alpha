@@ -31,25 +31,31 @@ describe("wolfram-alpha hubot script", () => {
 
   afterEach(() => {
     robot.shutdown();
-    nock.cleanAll();
   });
 
-  it.skip("responds to wolfram", (done) => {
-    robot.adapter.on("send", function (_envelope, strings) {
-      const answer = strings[0];
+  // TODO(tom): Move these "respond to" tests
+  it("responds to wolfram", (done) => {
+    const scope = nock("https://api.wolframalpha.com/")
+      .get("/v2/query")
+      .query(true)
+      .reply(200);
 
-      expect(answer).toEqual("answering foo");
+    robot.adapter.on("send", function (_envelope, _strings) {
+      expect(scope.isDone()).toBe(true);
       done();
     });
 
     robot.adapter.receive(new TextMessage(user, "hubot wolfram foo"));
   });
 
-  it.skip("responds to wfa", (done) => {
-    robot.adapter.on("send", function (_envelope, strings) {
-      const answer = strings[0];
+  it("responds to wfa", (done) => {
+    const scope = nock("https://api.wolframalpha.com/")
+      .get("/v2/query")
+      .query(true)
+      .reply(200);
 
-      expect(answer).toEqual("answering bar");
+    robot.adapter.on("send", function (_envelope, _strings) {
+      expect(scope.isDone()).toBe(true);
       done();
     });
 
@@ -57,17 +63,17 @@ describe("wolfram-alpha hubot script", () => {
   });
 
   describe("with a valid API response", () => {
-    const scope = nock("https://api.wolframalpha.com/")
-      .get("/v2/query")
-      .query({
-        format: "image,plaintext",
-        output: "JSON",
-        input: "earth",
-        appid: "test",
-      })
-      .reply(200, readFixture("earth"));
+    it("responds with a list of attachments", (done) => {
+      const scope = nock("https://api.wolframalpha.com/")
+        .get("/v2/query")
+        .query({
+          format: "image,plaintext",
+          output: "JSON",
+          input: "earth",
+          appid: "test",
+        })
+        .reply(200, readFixture("earth"));
 
-    it("calls the Wolfram Alpha API", (done) => {
       robot.adapter.on("send", function (_envelope, strings) {
         const answer = strings[0];
 
@@ -78,6 +84,107 @@ describe("wolfram-alpha hubot script", () => {
       });
 
       robot.adapter.receive(new TextMessage(user, "hubot wfa earth"));
+    });
+  });
+
+  describe("with an error response from the API", () => {
+    it("responds with a list of attachments", (done) => {
+      const scope = nock("https://api.wolframalpha.com/")
+        .get("/v2/query")
+        .query({
+          format: "image,plaintext",
+          output: "JSON",
+          input: "earth",
+          appid: "test",
+        })
+        .reply(500, {
+          queryresult: {
+            success: false,
+            error: { code: 123, msg: "some error" },
+          },
+        });
+
+      robot.adapter.on("send", function (_envelope, strings) {
+        const answer = strings[0];
+
+        expect(answer).toEqual("Error code 123: some error");
+        expect(scope.isDone()).toBe(true);
+        done();
+      });
+
+      robot.adapter.receive(new TextMessage(user, "hubot wfa earth"));
+    });
+  });
+
+  describe("with an invalid API response", () => {
+    it("informs the user of the problem", (done) => {
+      const scope = nock("https://api.wolframalpha.com/")
+        .get("/v2/query")
+        .query({
+          format: "image,plaintext",
+          output: "JSON",
+          input: "earth",
+          appid: "test",
+        })
+        .reply(200, "\x00");
+
+      robot.adapter.on("send", function (_envelope, strings) {
+        const answer = strings[0];
+
+        expect(answer).toMatch(/was not valid/);
+        expect(scope.isDone()).toBe(true);
+        done();
+      });
+
+      robot.adapter.receive(new TextMessage(user, "hubot wfa earth"));
+    });
+  });
+
+  describe("when the HTTP client returns an error", () => {
+    it("informs the user of the problem", (done) => {
+      const scope = nock("https://api.wolframalpha.com/")
+        .get("/v2/query")
+        .query({
+          format: "image,plaintext",
+          output: "JSON",
+          input: "earth",
+          appid: "test",
+        })
+        .replyWithError("node http client error");
+
+      robot.adapter.on("send", function (_envelope, strings) {
+        const answer = strings[0];
+
+        expect(answer).toMatch(/node http client error/);
+        expect(scope.isDone()).toBe(true);
+        done();
+      });
+
+      robot.adapter.receive(new TextMessage(user, "hubot wfa earth"));
+    });
+  });
+
+  describe("when there are no results", () => {
+    it("informs the user that the query returned no results", (done) => {
+      const scope = nock("https://api.wolframalpha.com/")
+        .get("/v2/query")
+        .query({
+          format: "image,plaintext",
+          output: "JSON",
+          input: "slkdjfsd",
+          appid: "test",
+        })
+        .reply(200, readFixture("slkdjfsd"));
+
+      robot.adapter.on("send", function (_envelope, strings) {
+        const answer = strings[0];
+
+        expect(answer).toMatch(/^No results/);
+        expect(scope.isDone()).toBe(true);
+        done();
+      });
+
+      robot.adapter.receive(new TextMessage(user, "hubot wfa slkdjfsd"));
     });
   });
 });
