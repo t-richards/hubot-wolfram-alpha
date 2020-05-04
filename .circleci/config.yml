@@ -30,9 +30,6 @@ jobs:
           name: Inspect package contents
           command: |
             tar xvf *.tgz
-      - run:
-          name: Audit dependencies
-          command: yarn audit
       - store_artifacts:
           path: coverage
           prefix: coverage

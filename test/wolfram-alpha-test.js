@@ -52,7 +52,7 @@ describe("wolfram-alpha hubot script", () => {
   });
 
   it("responds to wfa", (done) => {
-    robot.adapter.on("send", function (envelope, strings) {
+    robot.adapter.on("send", function (_envelope, strings) {
       const answer = strings[0];
 
       expect(answer).to.eql("answering bar");

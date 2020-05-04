@@ -11,7 +11,6 @@ describe("producing slack-formatted attachments", () => {
   it("generates a list of attachments", () => {
     let fixture = readFixture("codices-replace-scrolls");
     let data = parseResult(fixture);
-    let attachments = generateAttachments(data);
     let expected = [
       {
         color: "#FF8700",
@@ -36,13 +35,14 @@ describe("producing slack-formatted attachments", () => {
       },
     ];
 
+    let attachments = generateAttachments(data);
+
     expect(attachments).to.deep.eql(expected);
   });
 
   it("generates attachments with multiple subpods", () => {
     let fixture = readFixture("earth");
     let data = parseResult(fixture);
-    let attachments = generateAttachments(data);
     let expected = [
       {
         color: "#FF8700",
@@ -113,6 +113,8 @@ describe("producing slack-formatted attachments", () => {
         title: "Image",
       },
     ];
+
+    let attachments = generateAttachments(data);
 
     expect(attachments).to.deep.eql(expected);
   });

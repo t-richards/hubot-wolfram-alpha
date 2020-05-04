@@ -6,20 +6,30 @@ const readFixture = require("./helper/readFixture");
 
 const parseResult = require("../src/parse-result");
 
-describe("determining query success", () => {
+describe('parseResult', () => {
   it("handles unsuccessful queries", () => {
     let fixture = readFixture("slkdjfsd");
-    let data = parseResult(fixture);
 
-    expect(data).to.have.property("success").that.is.a("boolean");
-    expect(data.success).to.eql(false);
+    let result = parseResult(fixture);
+
+    expect(result).to.have.property("success").that.is.a("boolean");
+    expect(result.success).to.eql(false);
   });
 
   it("handles successful queries", () => {
     let fixture = readFixture("earth");
-    let data = parseResult(fixture);
 
-    expect(data).to.have.property("success").that.is.a("boolean");
-    expect(data.success).to.eql(true);
+    let result = parseResult(fixture);
+
+    expect(result).to.have.property("success").that.is.a("boolean");
+    expect(result.success).to.eql(true);
   });
+
+  it("handles json parsing errors", () => {
+    let fixture = "\x00";
+
+    let result = parseResult(fixture);
+
+    expect(result).to.eql(null);
+  })
 });
