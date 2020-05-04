@@ -1,7 +1,7 @@
 {
   "name": "hubot-wolfram-alpha",
   "description": "Wolfram Alpha plugin for Hubot",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Tom Richards <tom@tomrichards.net>",
   "repository": {
     "type": "git",
@@ -24,8 +24,8 @@
     "sinon-chai": "^3.3.0"
   },
   "scripts": {
-    "lint": "prettier --write **/*.js",
-    "lint-ci": "prettier --check **/*.js",
+    "lint": "prettier --write *.js **/*.js",
+    "lint:ci": "prettier --check *.js **/*.js",
     "test": "NODE_ENV=test nyc mocha"
   },
   "nyc": {

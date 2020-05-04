@@ -19,7 +19,7 @@ jobs:
             - ./node_modules
       - run:
           name: Lint code
-          command: yarn lint-ci
+          command: yarn lint:ci
       - run:
           name: Run tests
           command: yarn test

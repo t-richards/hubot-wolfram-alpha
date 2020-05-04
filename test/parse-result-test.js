@@ -6,7 +6,7 @@ const readFixture = require("./helper/readFixture");
 
 const parseResult = require("../src/parse-result");
 
-describe('parseResult', () => {
+describe("parseResult", () => {
   it("handles unsuccessful queries", () => {
     let fixture = readFixture("slkdjfsd");
 
@@ -31,5 +31,5 @@ describe('parseResult', () => {
     let result = parseResult(fixture);
 
     expect(result).to.eql(null);
-  })
+  });
 });
