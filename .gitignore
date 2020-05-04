@@ -1,5 +1,11 @@
-.nyc_output/
+# Dist
 *.tgz
-coverage/
+
+# Deps
 node_modules/
 yarn.lock
+
+# Test
+.nyc_output/
+coverage/
+test-results/

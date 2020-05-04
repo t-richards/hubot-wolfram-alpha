@@ -31,7 +31,7 @@ jobs:
           command: |
             tar tvf *.tgz
       - store_test_results:
-          path: coverage
+          path: test-results
       - store_artifacts:
           path: coverage
           prefix: coverage

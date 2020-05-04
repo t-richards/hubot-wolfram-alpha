@@ -6,7 +6,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ["src/**/*.js"],
   coverageDirectory: "coverage",
-  coverageReporters: ["json", "text", "lcov", "html"],
+  coverageReporters: ["text", "html"],
   coverageThreshold: {
     global: {
       branches: 100,
@@ -16,5 +16,12 @@ module.exports = {
     },
   },
   globalSetup: "<rootDir>/test/setup",
+  reporters: [
+    "default",
+    [
+      "jest-junit",
+      { outputDirectory: "test-results/jest", outputName: "results.xml" },
+    ],
+  ],
   testEnvironment: "node",
 };
