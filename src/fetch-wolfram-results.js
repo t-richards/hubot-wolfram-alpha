@@ -20,11 +20,6 @@ module.exports = (robot, res) => {
     },
   };
 
-  if (process.env.NODE_ENV === "test") {
-    res.send(`answering ${res.match[2]}`);
-    return;
-  }
-
   return robot.http("https://api.wolframalpha.com/v2/query", options).get()(
     function (err, _response, body) {
       if (err) {
