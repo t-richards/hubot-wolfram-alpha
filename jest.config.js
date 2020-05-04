@@ -4,9 +4,7 @@
 module.exports = {
   clearMocks: true,
   collectCoverage: true,
-  collectCoverageFrom: [
-    "src/**/*.js"
-  ],
+  collectCoverageFrom: ["src/**/*.js"],
   coverageDirectory: "coverage",
   coverageReporters: ["json", "text", "lcov", "html"],
   coverageThreshold: {
