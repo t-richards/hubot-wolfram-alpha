@@ -3,6 +3,7 @@
 .npmignore
 .nyc_output
 coverage
+jest.config.js
 node_modules
 test
 yarn.lock

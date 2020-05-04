@@ -29,7 +29,7 @@ jobs:
       - run:
           name: Inspect package contents
           command: |
-            tar xvf *.tgz
+            tar tvf *.tgz
       - store_artifacts:
           path: coverage
           prefix: coverage
