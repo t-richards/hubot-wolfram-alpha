@@ -1,7 +1,9 @@
 const nock = require("nock");
+nock.disableNetConnect();
+
 const process = require("process");
 
-module.exports = () => {
+module.exports = async () => {
+  // Environment
   process.env.WOLFRAM_ALPHA_APPID = "test";
-  nock.disableNetConnect();
 };
