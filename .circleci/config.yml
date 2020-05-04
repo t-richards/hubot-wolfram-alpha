@@ -30,6 +30,8 @@ jobs:
           name: Inspect package contents
           command: |
             tar tvf *.tgz
+      - store_test_results:
+          path: coverage
       - store_artifacts:
           path: coverage
           prefix: coverage
