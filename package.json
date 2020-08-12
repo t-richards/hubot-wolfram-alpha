@@ -18,7 +18,7 @@
     "hubot": "^3.0.1",
     "hubot-mock-adapter": "^1.1.1",
     "jest": "^26.3.0",
-    "jest-junit": "^10.0.0",
+    "jest-junit": "^11.1.0",
     "nock": "^13.0.2",
     "prettier": "2.0.5"
   },
