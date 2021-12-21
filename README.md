@@ -1,7 +1,6 @@
 # hubot-wolfram-alpha
 
-[![CircleCI Build Status](https://img.shields.io/circleci/project/github/t-richards/hubot-wolfram-alpha/master.svg?style=flat-square)](https://circleci.com/gh/t-richards/hubot-wolfram-alpha)
-[![NPM Version](https://img.shields.io/npm/v/hubot-wolfram-alpha.svg?style=flat-square)](https://www.npmjs.com/package/hubot-wolfram-alpha)
+:warning: This project is no longer maintained. :warning:
 
 [Wolfram Alpha][wfa] integration for [Hubot][hubot]. Emits [Slack][slack]-formatted attachments.
 
